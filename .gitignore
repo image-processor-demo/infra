@@ -1,0 +1,24 @@
+# Terraform local state
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+override.tf.json
+terraform.rc
+
+# Terraform working directories
+.terraform/
+.terraform.tfstate.lock.info
+
+# Ignore plan output files
+*.plan
+
+# Ignore variable files with secrets (optional, if you use them locally)
+*.tfvars
+*.tfvars.json
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
