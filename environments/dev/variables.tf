@@ -9,3 +9,8 @@ variable "environment" {
   type        = string
   default     = "dev"
 }
+
+variable "api_shared_secret" {
+  type      = string
+  sensitive = true
+}
