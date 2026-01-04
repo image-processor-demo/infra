@@ -1,5 +1,5 @@
 module "backend" {
-  source = "git::https://github.com/image-processor-demo/modules.git//backend?ref=v0.2.0"
+  source = "git::https://github.com/image-processor-demo/modules.git//backend?ref=v0.2.1"
 
   environment = var.environment
   aws_region  = var.aws_region
@@ -13,7 +13,7 @@ module "backend" {
 }
 
 module "frontend" {
-  source = "git::https://github.com/image-processor-demo/modules.git//frontend?ref=v0.2.0"
+  source = "git::https://github.com/image-processor-demo/modules.git//frontend?ref=v0.2.1"
 
   environment       = var.environment
   api_shared_secret = var.api_shared_secret
