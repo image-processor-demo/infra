@@ -6,12 +6,12 @@ on:
     branches:
       - main
     paths:
-      - 'live/environments/dev/**'
+      - 'environments/dev/**'
   push:
     branches:
       - 'feature/**'
     paths:
-      - 'live/environments/dev/**'
+      - 'environments/dev/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}

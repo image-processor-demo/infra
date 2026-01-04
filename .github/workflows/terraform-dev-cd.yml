@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'live/environments/dev/**'
+      - 'environments/dev/**'
 
 permissions:
   contents: read
