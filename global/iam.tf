@@ -58,3 +58,24 @@ resource "aws_iam_role_policy_attachment" "github_actions_role_attach" {
   # In a production environment, you should create and attach a more
   # restrictive policy that only allows the necessary actions.
 }
+
+
+resource "aws_iam_role" "apigateway_cloudwatch" {
+  name = "apigateway-cloudwatch-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect = "Allow"
+      Principal = {
+        Service = "apigateway.amazonaws.com"
+      }
+      Action = "sts:AssumeRole"
+    }]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "apigw_logs" {
+  role       = aws_iam_role.apigateway_cloudwatch.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+}
