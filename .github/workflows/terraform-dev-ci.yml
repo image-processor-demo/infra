@@ -7,11 +7,6 @@ on:
       - main
     paths:
       - 'environments/dev/**'
-  push:
-    branches:
-      - 'feature/**'
-    paths:
-      - 'environments/dev/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
