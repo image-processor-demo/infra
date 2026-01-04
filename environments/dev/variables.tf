@@ -11,6 +11,8 @@ variable "environment" {
 }
 
 variable "api_shared_secret" {
-  type      = string
-  sensitive = true
+  type        = string
+  description = "Shared secret used by CloudFront origin custom header"
+  sensitive   = true
 }
+
