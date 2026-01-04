@@ -53,8 +53,12 @@ jobs:
       - name: Terraform Plan
         run: terraform plan -out=tfplan
         working-directory: ${{ env.WORKING_DIR }}
+        env:
+          TF_VAR_api_shared_secret: ${{ secrets.API_SHARED_SECRET }}
 
       # 6️⃣ Terraform Apply (exact plan)
       - name: Terraform Apply
         run: terraform apply -auto-approve tfplan
         working-directory: ${{ env.WORKING_DIR }}
+        env:
+          TF_VAR_api_shared_secret: ${{ secrets.API_SHARED_SECRET }}
