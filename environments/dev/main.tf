@@ -1,4 +1,3 @@
-# Here we will call the modules stored in their own Git repository
 
 module "backend" {
   source = "git::ssh://git@github.com/image-processor-demo/modules.git//backend?ref=v0.1.0"
