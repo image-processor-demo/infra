@@ -79,3 +79,7 @@ resource "aws_iam_role_policy_attachment" "apigw_logs" {
   role       = aws_iam_role.apigateway_cloudwatch.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
 }
+
+resource "aws_api_gateway_account" "account" {
+  cloudwatch_role_arn = aws_iam_role.apigateway_cloudwatch.arn
+}
