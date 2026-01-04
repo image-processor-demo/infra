@@ -16,7 +16,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  WORKING_DIR: live/environments/dev
+  WORKING_DIR: environments/dev
   TERRAFORM_VERSION: 1.14.0
   AWS_REGION: eu-west-1
   AWS_ACCOUNT_ID: "938108731356"

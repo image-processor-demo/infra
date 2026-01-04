@@ -21,7 +21,7 @@ concurrency:
   # This helps to avoid redundant runs and saves CI resources.
 
 env:
-  WORKING_DIR: live/environments/dev
+  WORKING_DIR: environments/dev
   TERRAFORM_VERSION: 1.14.0
 
 jobs:
@@ -40,14 +40,14 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: ${{ env.WORKING_DIR }}/.terraform/providers
-          key: ${{ runner.os }}-providers-${{ hashFiles('modules/**/*.tf', 'live/environments/dev/*.tf') }}
+          key: ${{ runner.os }}-providers-${{ hashFiles('modules/**/*.tf', 'environments/dev/*.tf') }}
           restore-keys: ${{ runner.os }}-providers-
 
       # Cache modules
       - uses: actions/cache@v4
         with:
           path: ${{ env.WORKING_DIR }}/.terraform/modules
-          key: ${{ runner.os }}-modules-dev-${{ hashFiles('modules/**/*.tf', 'live/environments/dev/*.tf') }}
+          key: ${{ runner.os }}-modules-dev-${{ hashFiles('modules/**/*.tf', 'environments/dev/*.tf') }}
           restore-keys: ${{ runner.os }}-modules-dev-
 
       - name: Terraform Format
