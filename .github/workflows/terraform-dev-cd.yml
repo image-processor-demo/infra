@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'environments/dev/**'
+      - '.github/workflows/terraform-dev-cd.yml'
 
 permissions:
   contents: read
@@ -20,6 +21,7 @@ env:
   TERRAFORM_VERSION: 1.14.0
   AWS_REGION: eu-west-1
   AWS_ACCOUNT_ID: "938108731356"
+  TF_VAR_api_shared_secret: ${{ secrets.API_SHARED_SECRET }}
 
 jobs:
   deploy:
