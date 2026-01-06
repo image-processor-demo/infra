@@ -1,3 +1,3 @@
 backend:
   lambda:
-    process: "lambda-process-artifact.sha-cdce47a7eb8100e97f55075a28d278ba766115e9.zip"
+    process: "lambda-process-artifact.sha-4676aead81861b6cd661eadb6a944270855c8ae9.zip"
